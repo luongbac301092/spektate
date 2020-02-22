@@ -51,10 +51,10 @@ def update_pipeline(account_name, account_key, table_name, partition_name, filte
         break
 
     if count == 0:
-        add_pipeline(account_name, account_key, table_name, partition_name, filter_name, filter_value, name1, value1, name2, value2, name3, value3)
+        add_pipeline(account_name, account_key, table_name, partition_name, filter_name, filter_value, name1, value1, name2, value2, name3, value3, name4, value4, name5, value5)
     print("Done")
 
-def add_pipeline(account_name, account_key, table_name, partition_name, filter_name, filter_value, name1, value1, name2=None, value2=None, name3=None, value3=None):
+def add_pipeline(account_name, account_key, table_name, partition_name, filter_name, filter_value, name1, value1, name2=None, value2=None, name3=None, value3=None, name4=None, value4=None, name5=None, value5=None):
     print("Adding a new entry")
     new_entry = {}
     new_entry["RowKey"] = generate_row_key()
