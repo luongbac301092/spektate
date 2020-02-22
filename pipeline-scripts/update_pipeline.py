@@ -19,20 +19,20 @@ def update_pipeline(account_name, account_key, table_name, partition_name, filte
             add = True
         entity[name1] = value1.lower()
 
-        if name2 != None and value2 != None:
-            if name2 in entity and entity[name2] != value2.lower():
+        if name2 != None:
+            if name2 in entity and value2 != None and entity[name2] != value2.lower():
                 add = True
-            entity[name2] = value2.lower()
+            entity[name2] = value2.lower() if value2 != None else None
         
-        if name3 != None and value3 != None:
-            if name3 in entity and entity[name3] != value3.lower():
+        if name3 != None:
+            if name3 in entity and value3 != None and entity[name3] != value3.lower():
                 add = True
-            entity[name3] = value3.lower()
+            entity[name3] = value3.lower() if value3 != None else None
 
-        if name4 != None and value4 != None:
-            if name4 in entity and entity[name4] != value4.lower():
+        if name4 != None:
+            if name4 in entity and and value4 != None entity[name4] != value4.lower():
                 add = True
-            entity[name4] = value4.lower()
+            entity[name4] = value4.lower() if value4 != None else None
 
         if add == False:
             table_service.update_entity(table_name, entity)
